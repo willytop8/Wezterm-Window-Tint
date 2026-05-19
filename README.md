@@ -6,8 +6,8 @@ WezTerm Window Tint colors your terminal window based on the project in the
 active tab or pane. Open several terminals across several repositories and the
 active project gets an immediate, subtle visual identity.
 
-It is a WezTerm Lua module, not a binary plugin. Drop one file into your
-WezTerm config directory, require it from `wezterm.lua`, and reload.
+It is a WezTerm Lua plugin. Require it from `wezterm.lua`, configure the
+options you want, and reload.
 
 ![WezTerm Window Tint showing project-colored terminal tabs and window chrome](docs/screenshot.png)
 
@@ -26,20 +26,15 @@ session identity, not permanent project branding.
 
 ## Install
 
-Copy the module into your WezTerm config directory:
-
-```sh
-mkdir -p ~/.config/wezterm
-cp wezterm-window-tint.lua ~/.config/wezterm/wezterm-window-tint.lua
-```
-
-Then add this to `~/.config/wezterm/wezterm.lua`:
+Add this to `~/.config/wezterm/wezterm.lua`:
 
 ```lua
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
-require('wezterm-window-tint').apply_to_config(config, {
+local window_tint = wezterm.plugin.require('https://github.com/willytop8/Wezterm-Window-Tint')
+
+window_tint.apply_to_config(config, {
   show_badge = true,
   set_retro_tab_bar = true,
 })
@@ -48,14 +43,42 @@ return config
 ```
 
 If you already have a `wezterm.lua`, keep your existing config and add only the
-`require(...).apply_to_config(config, ...)` call before `return config`.
+`wezterm.plugin.require(...)` and `window_tint.apply_to_config(config, ...)`
+lines before `return config`.
 
 Reload WezTerm with `Cmd+Shift+R` on macOS, or quit and reopen it.
+
+To update later:
+
+```lua
+wezterm.plugin.update_all()
+```
+
+Remove that line after WezTerm has updated the plugin.
+
+### Manual Install
+
+If you prefer not to use WezTerm's plugin loader, copy the module into your
+config directory:
+
+```sh
+mkdir -p ~/.config/wezterm
+cp wezterm-window-tint.lua ~/.config/wezterm/wezterm-window-tint.lua
+```
+
+Then require it from `wezterm.lua`:
+
+```lua
+require('wezterm-window-tint').apply_to_config(config, {
+  show_badge = true,
+  set_retro_tab_bar = true,
+})
+```
 
 ## Options
 
 ```lua
-require('wezterm-window-tint').apply_to_config(config, {
+window_tint.apply_to_config(config, {
   show_badge = true,
   set_retro_tab_bar = true,
   retint_interval_seconds = 1,

@@ -3,6 +3,7 @@
 ## 0.1.0 - 2026-05-19
 
 - Initial shareable Lua module.
+- Native WezTerm plugin entrypoint via `wezterm.plugin.require`.
 - Project root detection by nearest `.git` parent.
 - Runtime-scoped palette assignment with first-12 collision avoidance.
 - Active window, frame, tab bar, active tab, and status badge tinting.
