@@ -9,6 +9,8 @@ active project gets an immediate, subtle visual identity.
 It is a WezTerm Lua module, not a binary plugin. Drop one file into your
 WezTerm config directory, require it from `wezterm.lua`, and reload.
 
+![WezTerm Window Tint showing project-colored terminal tabs and window chrome](docs/screenshot.png)
+
 ## What It Does
 
 - Finds the active pane's current working directory through WezTerm.
