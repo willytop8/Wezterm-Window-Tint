@@ -1,6 +1,6 @@
 {
   "name": "@william.ricchiuti/wezterm-window-tint",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Project-aware window tinting for WezTerm.",
   "license": "MIT",
   "author": "willytop8",
