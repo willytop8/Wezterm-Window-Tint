@@ -1,0 +1,41 @@
+{
+  "name": "@willytop8/wezterm-window-tint",
+  "version": "0.1.0",
+  "description": "Project-aware window tinting for WezTerm.",
+  "license": "MIT",
+  "author": "willytop8",
+  "homepage": "https://github.com/willytop8/Wezterm-Window-Tint#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/willytop8/Wezterm-Window-Tint.git"
+  },
+  "bugs": {
+    "url": "https://github.com/willytop8/Wezterm-Window-Tint/issues"
+  },
+  "keywords": [
+    "wezterm",
+    "wezterm-plugin",
+    "lua",
+    "terminal",
+    "theme",
+    "window-tint"
+  ],
+  "bin": {
+    "wezterm-window-tint": "bin/wezterm-window-tint.js"
+  },
+  "files": [
+    "bin/",
+    "CHANGELOG.md",
+    "docs/screenshot.png",
+    "examples/",
+    "plugin/",
+    "wezterm-window-tint.lua"
+  ],
+  "scripts": {
+    "test": "node --check bin/wezterm-window-tint.js",
+    "pack:dry": "npm pack --dry-run"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

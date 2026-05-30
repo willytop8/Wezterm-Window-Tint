@@ -26,6 +26,8 @@ session identity, not permanent project branding.
 
 ## Install
 
+### Native WezTerm Plugin
+
 Add this to `~/.config/wezterm/wezterm.lua`:
 
 ```lua
@@ -55,6 +57,33 @@ wezterm.plugin.update_all()
 ```
 
 Remove that line after WezTerm has updated the plugin.
+
+### npm / npx Installer
+
+The native WezTerm plugin loader above is the recommended install path. If you
+prefer npm, this package also includes a small installer that copies the Lua
+module into your WezTerm config directory:
+
+```sh
+npx @willytop8/wezterm-window-tint install
+```
+
+Then add this to `~/.config/wezterm/wezterm.lua` before `return config`:
+
+```lua
+require('wezterm-window-tint').apply_to_config(config, {
+  show_badge = true,
+  set_retro_tab_bar = true,
+})
+```
+
+Installer options:
+
+```sh
+npx @willytop8/wezterm-window-tint install --dry-run
+npx @willytop8/wezterm-window-tint install --force
+npx @willytop8/wezterm-window-tint install --config-dir ~/.config/wezterm
+```
 
 ### Manual Install
 
