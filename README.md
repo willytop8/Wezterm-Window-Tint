@@ -65,7 +65,7 @@ prefer npm, this package also includes a small installer that copies the Lua
 module into your WezTerm config directory:
 
 ```sh
-npx @william.ricchiuti/wezterm-window-tint install
+npx wezterm-window-tint install
 ```
 
 Then add this to `~/.config/wezterm/wezterm.lua` before `return config`:
@@ -80,9 +80,9 @@ require('wezterm-window-tint').apply_to_config(config, {
 Installer options:
 
 ```sh
-npx @william.ricchiuti/wezterm-window-tint install --dry-run
-npx @william.ricchiuti/wezterm-window-tint install --force
-npx @william.ricchiuti/wezterm-window-tint install --config-dir ~/.config/wezterm
+npx wezterm-window-tint install --dry-run
+npx wezterm-window-tint install --force
+npx wezterm-window-tint install --config-dir ~/.config/wezterm
 ```
 
 ### Manual Install
